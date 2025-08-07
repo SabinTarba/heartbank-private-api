@@ -36,6 +36,8 @@ public class AuditLogController {
      */
     @GetMapping("/logs")
     public ResponseEntity<PaginatedResponse<AuditLog>> getAuditLogs(@PageableDefault(size = 10, sort = "timestampCreated", direction = Sort.Direction.DESC) Pageable pageable) {
+        log.info(String.format("GET /api/v1/audit/logs - page number: %d, size: %d, sort: %s", pageable.getPageNumber(), pageable.getPageSize(), pageable.getSort().toList().toString()));
+
         Page<AuditLog> auditLogsPaginated = auditLogService.getAuditLogs(pageable);
 
         PaginatedResponse.PaginationMeta meta = new PaginatedResponse.PaginationMeta();
