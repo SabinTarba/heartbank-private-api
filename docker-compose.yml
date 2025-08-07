@@ -1,0 +1,24 @@
+services:
+  oracle-db:
+    image: gvenzl/oracle-free
+    container_name: oracle-db
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: sabintarba
+      APP_USER: sabintarba
+      APP_USER_PASSWORD: sabintarba
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+  heartbank-private-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: heartbank-private-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - oracle-db
+volumes:
+  oracle-data:
