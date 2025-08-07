@@ -20,7 +20,7 @@ CREATE TABLE hb_audit_log (
     timestamp_created TIMESTAMP(6) DEFAULT SYSTIMESTAMP NOT NULL,
 
     CONSTRAINT hb_audit_log_pk PRIMARY KEY (audit_log_id),
-    CONSTRAINT hb_audit_log_audit_type_ck CHECK (audit_type in ('ACCOUNT'))
+    CONSTRAINT hb_audit_log_audit_type_ck CHECK (audit_type in ('ACCOUNT', 'CLEANUP'))
 );
 
 -- Sequence for hb_audit_log.audit_log_id.

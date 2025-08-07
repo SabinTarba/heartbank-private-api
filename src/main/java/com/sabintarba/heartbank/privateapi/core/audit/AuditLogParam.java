@@ -6,9 +6,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -29,7 +32,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AuditLogParams {
+public class AuditLogParam {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hb_audit_log_param_id_s")
@@ -41,10 +44,6 @@ public class AuditLogParams {
     @Column(name = "audit_log_param_id")
     @JsonIgnore
     private Long id;
-
-    @Column(name = "audit_log_id")
-    @JsonIgnore
-    private Long auditLogId;
     
     @Column(name = "timestamp_created", nullable = false)
     private LocalDateTime timestampCreated;
@@ -54,4 +53,9 @@ public class AuditLogParams {
 
     @Column(name = "param_value", nullable = false)
     private String value;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "audit_log_id", nullable = false)
+    @JsonIgnore
+    private AuditLog auditLog;
 }

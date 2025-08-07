@@ -12,7 +12,8 @@ public enum AuditType {
     /**
      * Used for account operations.
      */
-    ACCOUNT("ACCOUNT");
+    ACCOUNT("ACCOUNT"),
+    CLEANUP("CLEANUP");
 
     private final String type;
 
