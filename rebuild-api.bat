@@ -9,7 +9,7 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo [2/3] Building new Docker image...
-docker-compose build heartbank-private-api
+docker compose build heartbank-private-api
 
 if %ERRORLEVEL% NEQ 0 (
     echo Docker build failed. Aborting.
@@ -17,4 +17,4 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo [3/3] Restarting Spring Boot Application...
-docker-compose up -d heartbank-private-api
+docker compose up -d heartbank-private-api
