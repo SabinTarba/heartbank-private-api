@@ -13,6 +13,10 @@ public enum AuditType {
      * Used for account operations.
      */
     ACCOUNT("ACCOUNT"),
+
+    /**
+     * Used for generic cleanup scheduler operations.
+     */
     CLEANUP("CLEANUP");
 
     private final String type;
