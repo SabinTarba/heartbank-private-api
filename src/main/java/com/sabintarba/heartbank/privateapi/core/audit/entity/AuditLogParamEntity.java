@@ -1,8 +1,6 @@
-package com.sabintarba.heartbank.privateapi.core.audit;
+package com.sabintarba.heartbank.privateapi.core.audit.entity;
 
 import java.time.LocalDateTime;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,7 +30,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AuditLogParam {
+public class AuditLogParamEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hb_audit_log_param_id_s")
@@ -42,7 +40,6 @@ public class AuditLogParam {
         allocationSize = 1
     )
     @Column(name = "audit_log_param_id")
-    @JsonIgnore
     private Long id;
     
     @Column(name = "timestamp_created", nullable = false)
@@ -56,6 +53,5 @@ public class AuditLogParam {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "audit_log_id", nullable = false)
-    @JsonIgnore
-    private AuditLog auditLog;
+    private AuditLogEntity auditLog;
 }

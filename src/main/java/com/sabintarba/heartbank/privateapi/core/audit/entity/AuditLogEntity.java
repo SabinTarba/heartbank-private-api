@@ -1,12 +1,16 @@
-package com.sabintarba.heartbank.privateapi.core.audit;
+package com.sabintarba.heartbank.privateapi.core.audit.entity;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sabintarba.heartbank.privateapi.core.audit.AuditType;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,7 +36,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AuditLog {
+public class AuditLogEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hb_audit_log_id_s")
@@ -44,8 +48,9 @@ public class AuditLog {
     @Column(name = "audit_log_id")
     private Long id;
     
+    @Enumerated(EnumType.STRING)
     @Column(name = "audit_type", nullable = false)
-    private String auditType;
+    private AuditType auditType;
     
     @Column(name = "audit_action", nullable = false)
     private String auditAction;
@@ -54,5 +59,5 @@ public class AuditLog {
     private LocalDateTime timestampCreated;
 
     @OneToMany(mappedBy = "auditLog", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<AuditLogParam> params = new ArrayList<>();
+    private List<AuditLogParamEntity> params = new ArrayList<>();
 }
