@@ -26,6 +26,5 @@ public class PaginatedResponse<T> {
         private long totalElements;
         private boolean hasNext;
         private boolean hasPrevious;
-
     }
 } 
