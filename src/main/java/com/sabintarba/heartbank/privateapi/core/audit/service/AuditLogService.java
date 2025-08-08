@@ -13,7 +13,7 @@ import com.sabintarba.heartbank.privateapi.core.audit.entity.AuditLogEntity;
 import com.sabintarba.heartbank.privateapi.core.audit.entity.AuditLogParamEntity;
 import com.sabintarba.heartbank.privateapi.core.audit.mapper.AuditLogMapper;
 import com.sabintarba.heartbank.privateapi.core.audit.repository.AuditLogRepository;
-import com.sabintarba.heartbank.privateapi.core.generic.PaginatedResponse;
+import com.sabintarba.heartbank.privateapi.generic.PaginatedResponse;
 
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;

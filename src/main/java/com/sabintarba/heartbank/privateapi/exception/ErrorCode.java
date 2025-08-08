@@ -1,4 +1,4 @@
-package com.sabintarba.heartbank.privateapi.core.exception;
+package com.sabintarba.heartbank.privateapi.exception;
 
 import org.springframework.http.HttpStatus;
 

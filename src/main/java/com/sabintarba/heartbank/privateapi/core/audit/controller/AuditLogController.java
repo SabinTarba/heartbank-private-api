@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sabintarba.heartbank.privateapi.core.audit.dto.response.AuditLogResponse;
 import com.sabintarba.heartbank.privateapi.core.audit.service.AuditLogService;
-import com.sabintarba.heartbank.privateapi.core.generic.PaginatedResponse;
+import com.sabintarba.heartbank.privateapi.generic.PaginatedResponse;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.sabintarba.heartbank.privateapi.core.generic;
+package com.sabintarba.heartbank.privateapi.generic;
 
 import java.util.List;
 

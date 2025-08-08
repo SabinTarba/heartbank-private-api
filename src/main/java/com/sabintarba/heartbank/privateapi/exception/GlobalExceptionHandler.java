@@ -1,4 +1,4 @@
-package com.sabintarba.heartbank.privateapi.core.exception;
+package com.sabintarba.heartbank.privateapi.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
