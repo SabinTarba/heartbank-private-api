@@ -58,7 +58,7 @@ public class AuditLogService {
 
     /**
      * Cleanup audit logs.
-     * @param retentionDays configuration parameter specified in audit.retention.days.
+     * @param retentionDays number of retention days.
      * @return AuditCleanupResult object
      */
     @Transactional
