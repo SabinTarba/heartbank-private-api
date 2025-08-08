@@ -9,6 +9,11 @@ import com.sabintarba.heartbank.privateapi.core.audit.dto.response.AuditLogParam
 import com.sabintarba.heartbank.privateapi.core.audit.dto.response.AuditLogResponse;
 import com.sabintarba.heartbank.privateapi.core.audit.entity.AuditLogEntity;
 
+/**
+ * Component class used as mapper to convert JPA entity AuditLogEntity to Dto API response AuditLogResponse.
+ * 
+ * @author Sabin Tarba, sabintarba01@gmail.com
+ */
 @Component
 public class AuditLogMapper {
 

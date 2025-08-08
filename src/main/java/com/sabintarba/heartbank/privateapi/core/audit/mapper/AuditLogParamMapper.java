@@ -5,6 +5,11 @@ import org.springframework.stereotype.Component;
 import com.sabintarba.heartbank.privateapi.core.audit.dto.response.AuditLogParamResponse;
 import com.sabintarba.heartbank.privateapi.core.audit.entity.AuditLogParamEntity;
 
+/**
+ * Component class used as mapper to convert JPA entity AuditLogParamEntity to Dto API response AuditLogParamResponse.
+ * 
+ * @author Sabin Tarba, sabintarba01@gmail.com
+ */
 @Component
 public class AuditLogParamMapper {
 
