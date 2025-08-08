@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import com.sabintarba.heartbank.privateapi.core.audit.service.AuditCleanupResult;
 import com.sabintarba.heartbank.privateapi.core.audit.service.AuditLogService;
 
-import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -33,7 +32,6 @@ public class AuditLogCleanupScheduler {
      * The cleanup is scheduled every day at 02:00 AM.
      */
     @Scheduled(cron = "0 0 2 * * ?")
-    @Transactional
     public void cleanup() {
         AuditCleanupResult result = auditLogService.cleanup(retentionDays);
         
