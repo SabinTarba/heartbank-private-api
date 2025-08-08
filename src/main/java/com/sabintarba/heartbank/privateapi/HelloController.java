@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sabintarba.heartbank.privateapi.core.audit.AuditLogService;
 import com.sabintarba.heartbank.privateapi.core.audit.AuditType;
-import com.sabintarba.heartbank.privateapi.exception.ApiException;
-import com.sabintarba.heartbank.privateapi.exception.ErrorCode;
+import com.sabintarba.heartbank.privateapi.core.exception.ApiException;
+import com.sabintarba.heartbank.privateapi.core.exception.ErrorCode;
 
 @RestController
 public class HelloController {

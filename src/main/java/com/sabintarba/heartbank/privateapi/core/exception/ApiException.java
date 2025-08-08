@@ -1,4 +1,4 @@
-package com.sabintarba.heartbank.privateapi.exception;
+package com.sabintarba.heartbank.privateapi.core.exception;
 
 import lombok.Getter;
 
